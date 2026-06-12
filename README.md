@@ -13,7 +13,7 @@ It provides:
 - Local user registration and login with PBKDF2 password hashing
 - IndexedDB persistence for users, attempts, results, and bookmarks
 - PWA installation and offline caching
-- A GitHub Pages deployment workflow
+- GitHub Pages deployment from the `main` branch
 
 ## Important deployment note
 
@@ -44,9 +44,7 @@ Opening `index.html` directly with `file://` is not supported because the app us
 
 ## Deploy
 
-The workflow at `.github/workflows/deploy-pages.yml` publishes the repository root to GitHub Pages whenever `main` is updated.
-
-The repository Pages source must be set to **GitHub Actions**.
+GitHub Pages publishes the repository root directly from the `main` branch.
 
 ## Content policy
 
