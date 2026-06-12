@@ -1,0 +1,21 @@
+{
+  "database": "flowforge-exam-lab",
+  "version": 1,
+  "implementation": "js/db.js",
+  "stores": {
+    "users": {
+      "keyPath": "username",
+      "indexes": ["email"],
+      "security": "Passwords use PBKDF2-SHA-256 with a unique random salt and 120000 iterations."
+    },
+    "attempts": {
+      "keyPath": "id",
+      "indexes": ["username", "completedAt"]
+    },
+    "bookmarks": {
+      "keyPath": "key",
+      "indexes": ["username"]
+    }
+  },
+  "hostingConstraint": "GitHub Pages is static, so this database is private to each browser profile."
+}

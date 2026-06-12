@@ -1,0 +1,18 @@
+{
+  "name": "FlowForge Exam Lab",
+  "short_name": "FlowForge",
+  "description": "Independent SAP Integration Suite practical exam simulator.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f7",
+  "theme_color": "#0a6ed1",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

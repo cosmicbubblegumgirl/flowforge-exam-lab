@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a6ed1">
+  <meta name="description" content="FlowForge is an SAP Integration Suite practice simulator with system and scenario-based mock exams.">
+  <title>FlowForge Exam Lab</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+
+  <main id="auth-view" class="auth-view">
+    <section class="auth-brand" aria-label="FlowForge introduction">
+      <div class="brand-lockup">
+        <img src="assets/logo.svg" alt="FlowForge" class="brand-logo">
+      </div>
+      <div class="auth-copy">
+        <span class="eyebrow light">Integration Developer Practice Lab</span>
+        <h1>Learn the system.<br>Reason through the scenario.</h1>
+        <p>Train in an exam workspace inspired by enterprise SAP experiences, with original practical questions, saved progress, and readiness analytics.</p>
+      </div>
+      <div class="auth-stats">
+        <div><strong>118</strong><span>Original questions</span></div>
+        <div><strong>2</strong><span>Practical exam modes</span></div>
+        <div><strong>100%</strong><span>Private on this device</span></div>
+      </div>
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="mobile-logo">
+          <img src="assets/logo-dark.svg" alt="FlowForge">
+        </div>
+        <div class="auth-tabs" role="tablist" aria-label="Account options">
+          <button class="auth-tab active" data-auth-tab="login" role="tab" aria-selected="true">Sign in</button>
+          <button class="auth-tab" data-auth-tab="register" role="tab" aria-selected="false">Create account</button>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <div class="form-heading">
+            <span class="eyebrow">Welcome back</span>
+            <h2>Continue your preparation</h2>
+            <p>Your attempts and progress are stored in your browser database.</p>
+          </div>
+          <label class="field">
+            <span>Username</span>
+            <input id="login-username" name="username" autocomplete="username" required placeholder="architect" value="architect">
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <div class="password-wrap">
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Enter your password" value="Forge123!">
+              <button class="icon-button password-toggle" type="button" aria-label="Show password">
+                <span class="icon icon-eye"></span>
+              </button>
+            </div>
+          </label>
+          <div class="form-row">
+            <label class="check-label"><input type="checkbox" id="remember-user" checked><span>Remember username</span></label>
+            <button type="button" class="text-button" id="demo-fill">Use demo account</button>
+          </div>
+          <button class="button button-primary button-large" type="submit">
+            <span>Sign in to FlowForge</span><span class="icon icon-arrow"></span>
+          </button>
+          <p class="demo-note">Demo: <strong>architect</strong> / <strong>Forge123!</strong></p>
+        </form>
+
+        <form id="register-form" class="auth-form hidden">
+          <div class="form-heading">
+            <span class="eyebrow">New candidate</span>
+            <h2>Create your local profile</h2>
+            <p>No account data leaves this device. Passwords are salted and hashed.</p>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>Display name</span>
+              <input name="displayName" autocomplete="name" required placeholder="Alex Morgan">
+            </label>
+            <label class="field">
+              <span>Username</span>
+              <input name="username" autocomplete="username" required minlength="3" pattern="[A-Za-z0-9._-]+" placeholder="alex.m">
+            </label>
+          </div>
+          <label class="field">
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" required placeholder="alex@example.com">
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <div class="password-wrap">
+              <input name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters">
+              <button class="icon-button password-toggle" type="button" aria-label="Show password">
+                <span class="icon icon-eye"></span>
+              </button>
+            </div>
+          </label>
+          <label class="field">
+            <span>Confirm password</span>
+            <input name="confirmPassword" type="password" autocomplete="new-password" required placeholder="Repeat your password">
+          </label>
+          <label class="check-label terms"><input name="terms" type="checkbox" required><span>I understand this is an independent practice tool, not an official SAP exam.</span></label>
+          <button class="button button-primary button-large" type="submit">Create account</button>
+        </form>
+      </div>
+      <p class="legal-copy">FlowForge is an independent learning simulator. SAP and SAP Integration Suite are trademarks of SAP SE.</p>
+      <footer class="creator-credit">A <strong>quantumcupcakecreation</strong></footer>
+    </section>
+  </main>
+
+  <div id="app-view" class="app-view hidden">
+    <header class="shell-header">
+      <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Open navigation"><span class="icon icon-menu"></span></button>
+      <a href="#" class="shell-brand" data-route="dashboard" aria-label="FlowForge dashboard">
+        <img src="assets/logo.svg" alt="FlowForge">
+      </a>
+      <div class="shell-title">
+        <span class="shell-divider"></span>
+        <span>Integration Developer Exam Lab</span>
+      </div>
+      <div class="header-actions">
+        <button class="icon-button" id="install-app" aria-label="Install app" title="Install app"><span class="icon icon-download"></span></button>
+        <button class="profile-button" id="profile-button" aria-haspopup="menu">
+          <span class="avatar" id="header-avatar">AR</span>
+          <span class="profile-copy"><strong id="header-name">Architect</strong><small id="header-rank">Integration Explorer</small></span>
+          <span class="icon icon-chevron"></span>
+        </button>
+      </div>
+      <div class="profile-menu hidden" id="profile-menu" role="menu">
+        <button data-route="profile" role="menuitem"><span class="icon icon-user"></span>Profile &amp; data</button>
+        <button id="logout-button" role="menuitem"><span class="icon icon-logout"></span>Sign out</button>
+      </div>
+    </header>
+
+    <aside class="shell-sidebar" id="sidebar">
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-route="dashboard"><span class="icon icon-home"></span><span>Overview</span></button>
+        <button class="nav-item" data-route="exams"><span class="icon icon-exam"></span><span>Exam center</span><span class="nav-badge">118</span></button>
+        <button class="nav-item" data-route="lab"><span class="icon icon-lab"></span><span>System lab</span></button>
+        <button class="nav-item" data-route="history"><span class="icon icon-history"></span><span>Attempt history</span></button>
+        <button class="nav-item" data-route="bookmarks"><span class="icon icon-bookmark"></span><span>Bookmarks</span></button>
+      </nav>
+      <div class="sidebar-card">
+        <div class="mini-ring" id="sidebar-ring"><span id="sidebar-readiness">0%</span></div>
+        <div><strong>Readiness</strong><small>Complete an exam to calibrate</small></div>
+      </div>
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        <span>Local database online</span>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim hidden" id="sidebar-scrim"></div>
+    <section id="route-view" class="route-view" tabindex="-1"></section>
+    <footer id="app-footer" class="app-footer">
+      <span>Designed for curious integration minds.</span>
+      <strong>quantumcupcakecreation</strong>
+    </footer>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
